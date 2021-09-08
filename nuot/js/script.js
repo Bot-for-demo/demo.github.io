@@ -217,7 +217,7 @@ window.onload = function () {
 				searchIcon.classList.toggle('_icon-search');
 				searchIcon.classList.toggle('_icon-cancel');
 				searchIcon.classList.toggle('rotate-anim');
-				searchWrap.classList.toggle('show');
+				searchWrap.classList.toggle('show-effect');
 			}
 
 			searchInput.addEventListener('input', function (e) {
@@ -233,7 +233,7 @@ window.onload = function () {
 				let itsSearch =
 					target == searchWrap || searchWrap.contains(target);
 				let itsBtn = target == searchIcon;
-				let isActive = searchWrap.classList.contains('show');
+				let isActive = searchWrap.classList.contains('show-effect');
 
 				if (!itsSearch && !itsBtn && isActive) {
 					toggle();
@@ -615,23 +615,23 @@ window.onload = function () {
 				if (getComputedStyle(authWrapper).display == 'none') {
 					menuModal.classList.toggle('active-modal');
 					bodyModal.classList.toggle('active-modal');
-					personalWrapper.classList.toggle('show');
-					BGModal.classList.toggle('show'); //
+					personalWrapper.classList.toggle('show-effect');
+					BGModal.classList.toggle('show-effect'); //
 				} else {
 					menuModal.classList.toggle('active-modal');
 					bodyModal.classList.toggle('active-modal');
-					authWrapper.classList.toggle('show');
-					BGModal.classList.toggle('show'); //
+					authWrapper.classList.toggle('show-effect');
+					BGModal.classList.toggle('show-effect'); //
 				}
 			});
 
 			unknownUser.addEventListener('click', (e) => {
 				if (getComputedStyle(authWrapper).display == 'none') {
-					personalWrapper.classList.toggle('show');
-					BGModal.classList.toggle('show'); //
+					personalWrapper.classList.toggle('show-effect');
+					BGModal.classList.toggle('show-effect'); //
 				} else {
-					authWrapper.classList.toggle('show');
-					BGModal.classList.toggle('show'); //
+					authWrapper.classList.toggle('show-effect');
+					BGModal.classList.toggle('show-effect'); //
 				}
 			});
 		}
@@ -645,7 +645,8 @@ window.onload = function () {
 						target == personalWrapper ||
 						personalWrapper.contains(target);
 					let itsBtn = target == unknownUser;
-					let isActive = personalWrapper.classList.contains('show');
+					let isActive =
+						personalWrapper.classList.contains('show-effect');
 
 					if (
 						!itsContainer &&
@@ -655,15 +656,16 @@ window.onload = function () {
 							'menu__mobile-unregistered'
 						)
 					) {
-						personalWrapper.classList.toggle('show');
-						BGModal.classList.toggle('show'); //
+						personalWrapper.classList.toggle('show-effect');
+						BGModal.classList.toggle('show-effect'); //
 					}
 				} else {
 					let target = e.target;
 					let itsContainer =
 						target == authWrapper || authWrapper.contains(target);
 					let itsBtn = target == unknownUser;
-					let isActive = authWrapper.classList.contains('show');
+					let isActive =
+						authWrapper.classList.contains('show-effect');
 
 					if (
 						!itsContainer &&
@@ -673,8 +675,8 @@ window.onload = function () {
 							'menu__mobile-unregistered'
 						)
 					) {
-						authWrapper.classList.toggle('show');
-						BGModal.classList.toggle('show'); //
+						authWrapper.classList.toggle('show-effect');
+						BGModal.classList.toggle('show-effect'); //
 					}
 				}
 			});
@@ -875,7 +877,7 @@ window.onload = function () {
 						unknownUser
 					) {
 						authWrapper.style.display = 'none';
-						personalWrapper.classList.toggle('show');
+						personalWrapper.classList.toggle('show-effect');
 						//BGModal.classList.toggle('show');
 						document.getElementById('telephone').value =
 							data.telephone;
@@ -1015,25 +1017,25 @@ window.onload = function () {
 					e.target.classList.contains('female-js') ||
 					e.target.parentNode.classList.contains('female-js')
 				) {
-					femaleSub.classList.toggle('show');
+					femaleSub.classList.toggle('show-effect');
 				}
 
 				if (
 					e.target.classList.contains('male-js') ||
 					e.target.parentNode.classList.contains('male-js')
 				) {
-					maleSub.classList.toggle('show');
+					maleSub.classList.toggle('show-effect');
 				}
 
 				if (
 					e.target.classList.contains('child-js') ||
 					e.target.parentNode.classList.contains('child-js')
 				) {
-					childSub.classList.toggle('show');
+					childSub.classList.toggle('show-effect');
 				}
 
 				if (e.target.classList.contains('menu__mob-sub-title')) {
-					e.target.parentNode.classList.toggle('show');
+					e.target.parentNode.classList.toggle('show-effect');
 				}
 			});
 		}
@@ -1111,7 +1113,7 @@ window.onload = function () {
 						} else {
 							sliders.update();
 						}
-					}, 300);
+					}, 400);
 				});
 			});
 
@@ -1577,19 +1579,19 @@ window.onload = function () {
 		if (headerbag) {
 			headerbag.addEventListener('click', (e) => {
 				if (e.target.classList.contains('header-bag')) {
-					basketWrapp.classList.toggle('show');
+					basketWrapp.classList.toggle('show-effect');
 					basketModal.classList.toggle('active-modal-basket');
 				}
 				isEmpty();
 			});
 
 			closeBasket.addEventListener('click', (e) => {
-				basketWrapp.classList.toggle('show');
+				basketWrapp.classList.toggle('show-effect');
 				basketModal.classList.toggle('active-modal-basket');
 			});
 
 			basketContinue.addEventListener('click', (e) => {
-				basketWrapp.classList.toggle('show');
+				basketWrapp.classList.toggle('show-effect');
 				basketModal.classList.toggle('active-modal-basket');
 			});
 
@@ -1605,10 +1607,10 @@ window.onload = function () {
 			let itsContainer =
 				target == container || container.contains(target);
 			let itsBtn = target == icon;
-			let isActive = container.classList.contains('show');
+			let isActive = container.classList.contains('show-effect');
 
 			if (!itsContainer && !itsBtn && isActive) {
-				basketWrapp.classList.toggle('show');
+				basketWrapp.classList.toggle('show-effect');
 				basketModal.classList.toggle('active-modal-basket');
 			}
 		}
@@ -1999,7 +2001,7 @@ window.onload = function () {
 				);
 			});
 
-			basketWrapp.classList.toggle('show');
+			basketWrapp.classList.toggle('show-effect');
 			basketModal.classList.toggle('active-modal-basket');
 
 			setToBasketIcon(data.total[0].products_total_count);
@@ -2293,76 +2295,149 @@ window.onload = function () {
 	//! other change
 	(function () {
 		// filters
-		let filtersContainer = document.querySelector('.init-container');
-		if (filtersContainer) {
-			let filters = document.querySelector('.filters');
-			let filterModal = document.querySelector('.filter-modal');
-			filtersContainer.addEventListener('click', () => {
-				filters.classList.toggle('show');
-				filterModal.classList.toggle('show');
+		//let filtersContainer = document.querySelector('.init-container');
+		let filters = document.querySelector('.filters');
+		if (filters) {
+			let filtersContainerBtn = document.querySelector(
+				'.init-container-btn'
+			);
+			let closeFilters = document.querySelector('.close-filters');
+			let closeFilterMobile = document.querySelector(
+				'.filter-title-close'
+			);
+
+			closeFilterMobile.addEventListener('click', () => {
+				filters.classList.toggle('show-effect');
+				addFilterStyles();
 			});
 
-			let currentSelect = $('.filters-select2').select2({
-				closeOnSelect: false,
-				dropdownCssClass: 'filters-dropdown',
-				language: {
-					noResults: function () {
-						return '...';
+			closeFilters.addEventListener('click', () => {
+				filters.classList.toggle('show-effect');
+				addFilterStyles();
+			});
+
+			function addFilterStyles() {
+				let noUiHandle = document.querySelectorAll('.noUi-handle');
+
+				if (
+					window.matchMedia('(max-width: 1110px)').matches &&
+					filters.classList.contains('show-effect')
+				) {
+					document.querySelector('body').style.overflow = 'hidden';
+				} else {
+					document.querySelector('body').style.overflow = 'auto';
+				}
+
+				if (filters.classList.contains('show-effect')) {
+					setTimeout(() => {
+						filters.style.boxShadow =
+							'0 1px 4px -1px rgba(0, 0, 0, 0.75)';
+						noUiHandle.forEach((i) => {
+							i.style.border = '1px solid #30313229';
+							i.style.borderRadius = '50%';
+							//i.style.opacity = '1';
+						});
+					}, 100);
+				} else {
+					filters.style.boxShadow = 'none';
+					noUiHandle.forEach((i) => {
+						i.style.border = 'none';
+						i.style.borderRadius = '0';
+						//i.style.opacity = '0';
+					});
+				}
+			}
+
+			filtersContainerBtn.addEventListener('click', () => {
+				filters.classList.toggle('show-effect');
+				addFilterStyles();
+			});
+
+			let currentSelect;
+			if (window.matchMedia('(min-width: 1110px)').matches) {
+				window.addEventListener(
+					'resize',
+					function (e) {
+						initSelect();
 					},
-				},
-				width: '100%',
-				allowHtml: true,
-				allowClear: true,
-			});
+					true
+				);
+			}
 
-			currentSelect.each(function () {
-				loadSelectCount($(this));
+			function initSelect() {
+				currentSelect = $('.filters-select2').select2({
+					closeOnSelect: false,
+					dropdownCssClass: 'filters-dropdown',
+					language: {
+						noResults: function () {
+							return '...';
+						},
+					},
+					width: '100%',
+					allowHtml: true,
+					allowClear: true,
+				});
 
-				$(this).on('change', function () {
-					//console.log($(this));
-					$(this)
-						.next()
-						.find('.select2-selection__choice__remove')
-						.remove();
-					$(this)
-						.next()
-						.find('.select2-selection__clear')
-						.text('')
-						.addClass('_icon-cancel');
-					//$(this).hide();
-					//$(this).find('.counter').remove();
-					let count = $(this)
-						.next()
-						.find('.select2-selection__choice').length;
-					let localText = $(this).attr('data-text');
+				currentSelect.each(function () {
+					loadSelectCount($(this));
 
-					if (count > 1) {
+					$(this).on('change', function () {
 						$(this)
 							.next()
-							.find('.select2-selection__choice')
+							.find('.select2-selection__choice__remove')
 							.remove();
 						$(this)
 							.next()
-							.find('.select2-selection__rendered')
-							.append(
-								`<li class="select2-selection__choice">${localText}: ${count}</li>`
-							);
-					}
+							.find('.select2-selection__clear')
+							.text('')
+							.addClass('_icon-cancel');
+						let count = $(this)
+							.next()
+							.find('.select2-selection__choice').length;
+						let localText = $(this).attr('data-text');
 
-					if (count > 0) {
-						$(this)
-							.next()
-							.find('.select2-search--inline')
-							.css('display', 'none');
-					} else {
-						$(this)
-							.next()
-							.find('.select2-search--inline')
-							.css('display', 'inline-block');
-					}
-					//$(this).find('.select2-selection__rendered').after('<div style="line-height: 28px; padding: 5px;" class="counter">'+count+' selected</div>');
+						if (count > 1) {
+							$(this)
+								.next()
+								.find('.select2-selection__choice')
+								.remove();
+							$(this)
+								.next()
+								.find('.select2-selection__rendered')
+								.append(
+									`<li class="select2-selection__choice">${localText}: ${count}</li>`
+								);
+						}
+
+						if (count > 0) {
+							$(this)
+								.next()
+								.find('.select2-search--inline')
+								.css('display', 'none');
+						} else {
+							$(this)
+								.next()
+								.find('.select2-search--inline')
+								.css('display', 'inline-block');
+						}
+					});
 				});
-			});
+			}
+
+			initSelect();
+
+			// let currentSelect = $('.filters-select2').select2({
+			// 	closeOnSelect: false,
+			// 	dropdownCssClass: 'filters-dropdown',
+			// 	language: {
+			// 		noResults: function () {
+			// 			return '...';
+			// 		},
+			// 	},
+			// 	width: '100%',
+			// 	allowHtml: true,
+			// 	allowClear: true,
+			// });
 
 			function loadSelectCount(thiz) {
 				thiz.next().find('.select2-selection__choice__remove').remove();
@@ -2392,6 +2467,143 @@ window.onload = function () {
 						.css('display', 'none');
 				}
 			}
+
+			if (window.matchMedia('(max-width: 1110px)').matches) {
+				let filterSizeBtn = document.querySelector('.filter-size-js');
+				let filterParamsBtn =
+					document.querySelector('.filter-params-js');
+				let filterPriceBtn = document.querySelector('.filter-price-js');
+				let filterRegulateBtn = document.querySelector(
+					'.filter-regulate-js'
+				);
+
+				let filterSize = document.getElementById('filterSize');
+				let filterPrice = document.getElementById('filterPrice');
+				let filterParams = document.getElementById('filterParams');
+				let filterRegulate = document.getElementById('filterRegulate');
+
+				if (filterParams) {
+					filterParams.classList.add('collapse');
+
+					filterParamsBtn.addEventListener('click', () => {
+						$('#filterParams').collapse('toggle');
+						let icon = filterParamsBtn.querySelector('.icon');
+						icon.classList.toggle('rotate270');
+					});
+				}
+
+				filterSize.classList.add('collapse');
+				filterPrice.classList.add('collapse');
+				filterRegulate.classList.add('collapse');
+				// $('#filterSize').collapse('hide');
+
+				filterSizeBtn.addEventListener('click', () => {
+					$('#filterSize').collapse('toggle');
+					let icon = filterSizeBtn.querySelector('.icon');
+
+					//if (filterSizeBtn.querySelector('.show')) {
+					icon.classList.toggle('rotate270');
+					// } else {
+
+					// }
+				});
+
+				filterPriceBtn.addEventListener('click', () => {
+					$('#filterPrice').collapse('toggle');
+					let icon = filterPriceBtn.querySelector('.icon');
+					icon.classList.toggle('rotate270');
+					// let show =
+					// 	filterPriceBtn.nextElementSibling.classList.contains(
+					// 		'collapsing'
+					// 	);
+					// let noUiHandle = document.querySelectorAll('.noUi-handle');
+					// console.log(show);
+
+					// if (show) {
+					// 	setTimeout(() => {
+					// 		noUiHandle.forEach((i) => {
+					// 			i.style.borderColor = 'red';
+					// 		});
+					// 	}, 300);
+					// } else {
+					// 	noUiHandle.forEach((i) => {
+					// 		i.style.borderColor = 'blue';
+					// 	});
+					// }
+				});
+
+				filterRegulateBtn.addEventListener('click', () => {
+					$('#filterRegulate').collapse('toggle');
+					let icon = filterRegulateBtn.querySelector('.icon');
+					icon.classList.toggle('rotate270');
+				});
+			}
+
+			let html5Slider = document.getElementById('noUiSliderRange');
+			let inputMin = document.getElementById('inputMin');
+			let inputMax = document.getElementById('inputMax');
+			let inputMinСhose = inputMin.getAttribute('data-chose');
+			let inputMaxСhose = inputMax.getAttribute('data-chose');
+
+			noUiSlider.create(html5Slider, {
+				start: [Number(inputMinСhose), Number(inputMaxСhose)],
+				step: 100,
+				connect: true,
+				range: {
+					min: Number(inputMin.value),
+					max: Number(inputMax.value),
+				},
+			});
+
+			html5Slider.noUiSlider.on('update', function (values, handle) {
+				let value = values[handle];
+
+				if (handle) {
+					inputMax.value = Number(value);
+				} else {
+					inputMin.value = Number(value);
+				}
+			});
+
+			let filtersForm = document.getElementById('filtersForm');
+			filtersForm.addEventListener('submit', (e) => {
+				e.preventDefault();
+				let capcha = document.getElementById('filtersCapcha');
+				let filterParams = document.getElementById('filterParams');
+				let filterSize = document.getElementById('filterSize');
+
+				if (capcha.value == '') {
+					if (filterParams) {
+						let allParamsArr = [];
+						let allParams = document.getElementById('allFilters');
+						allParams.value = allParamsArr;
+						let filters =
+							filterParams.querySelectorAll('option:checked');
+
+						if (filters.length > 0) {
+							filters.forEach((i) => {
+								allParamsArr.push(i.value);
+							});
+							allParams.value = allParamsArr;
+						}
+					}
+
+					let allSizesArr = [];
+					let allSizes = document.getElementById('allSizes');
+					allSizes.value = allSizesArr;
+					let size = filterSize.querySelectorAll('option:checked');
+
+					if (size.length > 0) {
+						size.forEach((i) => {
+							allSizesArr.push(i.value);
+						});
+						allSizes.value = allSizesArr;
+					}
+					filtersForm.submit();
+				}
+
+				console.log();
+			});
 		}
 		//pagination
 		let dataPage = document.querySelectorAll('[data-page]');
@@ -2409,56 +2621,45 @@ window.onload = function () {
 			});
 		}
 		//personal start
-		////////? personal page switch
-		// let historyTitle = document.querySelectorAll('.history-title-item');
-		// if (historyTitle.length > 0) {
-		// 	historyTitle.forEach((i) => {
-		// 		i.addEventListener('click', (e) => {
-		// 			toggleTitle();
-		// 		});
-		// 	});
-		// }
-
-		// function toggleTitle() {
-		// 	historyTitle.forEach((i) => {
-		// 		i.classList.toggle('active-title');
-		// 		userOrderSwitch();
-		// 	});
-		// }
-
-		// function userOrderSwitch() {
-		// 	let activeTitle = document.querySelector('.active-buy-title');
-		// 	let archiveTitle = document.querySelector('.archive-title');
-		// 	let activeWrapper = document.querySelector('.active__wrapper');
-		// 	let archiveWrapper = document.querySelector('.archive__wrapper');
-
-		// 	if (activeTitle.classList.contains('active-title')) {
-		// 		activeWrapper.style.display = 'block';
-		// 		archiveWrapper.style.display = 'none';
-		// 	} else if (archiveTitle.classList.contains('active-title')) {
-		// 		activeWrapper.style.display = 'none';
-		// 		archiveWrapper.style.display = 'block';
-		// 	}
-		// }
-		//fun for prevent def for a link size
-		if (window.matchMedia('(min-width: 640px)').matches) {
-			document
-				.querySelectorAll('.product__buy-container')
-				.forEach((i) => {
-					i.addEventListener('click', (e) => {
-						let longSize = i.classList.contains('long-size');
-						if (!longSize) {
-							e.preventDefault();
-						}
-					});
-				});
-		}
 		// $('body').on('input', '.input-words', function(){
 		// 	this.value = this.value.replace(/[^a-zа-яё\s]/gi, '');
 		// });
 		//personal
-		let personalPage = document.querySelector('.main__personal-wrapper');
-		if (personalPage) {
+		let historyContainer = document.querySelector('.history-container');
+		if (historyContainer) {
+			////////? personal page switch
+			// let historyTitle = document.querySelectorAll('.history-title-item');
+			// //if (historyTitle.length > 0) {
+			// historyTitle.forEach((i) => {
+			// 	i.addEventListener('click', (e) => {
+			// 		toggleTitle();
+			// 	});
+			// });
+			// //}
+			// function toggleTitle() {
+			// 	historyTitle.forEach((i) => {
+			// 		i.classList.toggle('active-title');
+			// 		userOrderSwitch();
+			// 	});
+			// }
+			// function userOrderSwitch() {
+			// 	let activeBuyTitle =
+			// 		document.querySelector('.active-buy-title');
+			// 	let archiveTitle = document.querySelector('.archive-title');
+			// 	let activeWrapper = document.querySelector('.active__wrapper');
+			// 	let archiveWrapper =
+			// 		document.querySelector('.archive__wrapper');
+			// 	if (activeBuyTitle.classList.contains('active-title')) {
+			// 		activeWrapper.style.display = 'block';
+			// 		archiveWrapper.style.display = 'none';
+			// 	} else if (archiveTitle.classList.contains('active-title')) {
+			// 		activeWrapper.style.display = 'none';
+			// 		archiveWrapper.style.display = 'block';
+			// 	}
+			// }
+		}
+		let userContainer = document.querySelector('.user-data-container');
+		if (userContainer) {
 			//? validate inputs
 			//? Только буквы английского и русского алфавита в поле input
 			let inputWords = document.querySelectorAll('.input-words');
@@ -2489,10 +2690,7 @@ window.onload = function () {
 			let timeoutCode;
 
 			if (telephone.value !== '' && !telephone.value.includes('_')) {
-				//let number = telephone.value.replace('(', '').replace(')', '');
 				initTelephone = telephone.value;
-				//validateTelephone = true;
-				//console.log(initTelephone);
 			}
 
 			//form submit
@@ -2506,14 +2704,12 @@ window.onload = function () {
 					let telephoneMessage = document.querySelector(
 						'.user-telephone-message'
 					);
-					//
 
 					if (
 						initTelephone == telephoneSubmit.value &&
-						capcha.value == '' &&
-						getValidData
+						capcha.value == ''
 					) {
-						setPersonData(getValidData());
+						sendPersonData(getValidData());
 					} else {
 						telephoneMessage.style.display = 'block';
 						setTimeout(() => {
@@ -2523,49 +2719,76 @@ window.onload = function () {
 				});
 
 			function getValidData() {
-				// let lastname = document.getElementById('user-lastname');
+				let lastname = document.getElementById('user-lastname');
 				// if (lastname.value == '') {
 				// 	lastname.nextElementSibling.classList.add('error-label');
 				// 	return false;
 				// }
-				// let firstname = document.getElementById('user-firstname');
+				let firstname = document.getElementById('user-firstname');
 				// if (firstname.value == '') {
 				// 	firstname.nextElementSibling.classList.add('error-label');
 				// 	return false;
 				// }
-				// let patronymic = document.getElementById('user-patronymic');
+				let patronymic = document.getElementById('user-patronymic');
 				// if (patronymic.value == '') {
 				// 	patronymic.nextElementSibling.classList.add('error-label');
 				// 	return false;
 				// }
-				// let email = document.getElementById('user-email');
+				let email = document.getElementById('user-email');
 				// if (email.value == '') {
 				// 	email.nextElementSibling.classList.add('error-label');
 				// 	return false;
 				// }
-				// let date = document.getElementById('user-date_of_birth');
+				let date = document.getElementById('user-date_of_birth');
 				// if (date.value == '') {
 				// 	date.nextElementSibling.classList.add('error-label');
 				// 	return false;
 				// }
-				// let telephone = document.getElementById('user-telephone');
+				let telephone = document.getElementById('user-telephone');
+				let number = telephone.value.replace('(', '').replace(')', '');
 				// if (telephone.value.includes('_')) {
 				// 	telephone.nextElementSibling.classList.add('error-label');
 				// 	return false;
 				// } else {
 				// 	return {};
 				// }
+				let gender = document.getElementById('user-gender');
 
-				return {};
+				// console.log(initTelephone);
+				// console.log(telephoneSubmite);
 
-				//let number = telephoneSubmite.value.replace('(', '').replace(')', '');
-				//console.log(initTelephone);
-				//console.log(telephoneSubmite);
+				return {
+					lastname: lastname.value,
+					firstname: firstname.value,
+					middlename: patronymic.value,
+					email: email.value,
+					telephone: number,
+					date_of_birth: date.value,
+					gender: gender.value,
+				};
 			}
 
-			function setPersonData(data) {
-				console.log('тут ajax');
-				//http://store-nuot.loc/index.php?route=account/edit
+			function sendPersonData(data) {
+				$.ajax({
+					url: 'index.php?route=account/account/edit',
+					dataType: 'json',
+					type: 'post',
+					data: data,
+					beforeSend: function () {
+						document.querySelector('.personal-btn').disabled = true;
+					},
+					success: function (json) {
+						//console.log('ок');
+						window.location.href =
+							'index.php?route=account/account';
+					},
+					error: function (err) {
+						document.querySelector(
+							'.personal-btn'
+						).disabled = false;
+						console.log(err);
+					},
+				});
 			}
 
 			telephone.addEventListener('keyup', (e) => {
@@ -2575,6 +2798,7 @@ window.onload = function () {
 				if (initTelephone == telephoneSubmit.value) {
 					confirmText.style.display = 'flex';
 					confirmBtn.style.display = 'none';
+					//document.getElementById('confirmTelefone').innerText = 'confirm';
 					confirmContainer.classList.add('hight-container');
 				} else {
 					confirmText.style.display = 'none';
@@ -2619,7 +2843,6 @@ window.onload = function () {
 							trueCode = data.send_code;
 							userPhone = data.phone;
 
-							//show refresh btn after 60 sec.
 							timeoutCode = setTimeout(
 								() =>
 									(personalRefreshCode.style.display =
@@ -2786,62 +3009,56 @@ window.onload = function () {
 			}
 		}
 
-		if (window.matchMedia('(max-width: 650px)').matches) {
+		function initMobileUserDataMenu() {
 			let userDataMenu = document.querySelector('.user-menu');
+			let body = document.querySelector('body');
 			if (userDataMenu) {
 				let closeItem = document.querySelector('.close-item');
 				let inforWrapper = document.querySelector(
 					'.personal__information__wrapper'
 				);
 
-				userDataMenu.addEventListener('click', () => {
-					inforWrapper.classList.toggle('show');
-				});
+				userDataMenu.addEventListener(
+					'click',
+					listenUserDataMenu,
+					true
+				);
+				closeItem.addEventListener('click', listenCloseItem, true);
 
-				closeItem.addEventListener('click', () => {
-					inforWrapper.classList.toggle('show');
-				});
+				function listenUserDataMenu() {
+					inforWrapper.classList.toggle('show-effect');
+					body.classList.toggle('body-not-scroll');
+				}
+
+				function listenCloseItem() {
+					inforWrapper.classList.toggle('show-effect');
+					body.classList.toggle('body-not-scroll');
+				}
 			}
 		}
-		//personal togle page
-		// let personalSidebarItems = document.querySelectorAll(
-		// 	'.personal__sidebar-item'
-		// );
-		// if (personalSidebarItems.length > 0) {
-		// 	personalSidebarItems.forEach((i) => {
-		// 		i.addEventListener('click', (e) => {
-		// 			removeActive();
-		// 			i.classList.add('item-active');
-		// 			let userContainer = document.querySelector(
-		// 				'.user-data-container'
-		// 			);
-		// 			let historyContainer =
-		// 				document.querySelector('.history-container');
 
-		// 			if (i.classList.contains('user-data-menu')) {
-		// 				userContainer.classList.add('show-left');
-		// 				historyContainer.classList.remove('show-left');
-		// 				//historyContainer.classList.add('scaleX');
+		if (window.matchMedia('(max-width: 650px)').matches) {
+			initMobileUserDataMenu();
+		}
 
-		// 				// userContainer.style.display = 'block'
-		// 				// historyContainer.style.display = 'none'
-		// 			} else if (i.classList.contains('history-menu')) {
-		// 				historyContainer.classList.add('show-left');
-		// 				userContainer.classList.remove('show-left');
-		// 				userContainer.classList.add('scaleX');
-		// 				// userContainer.style.display = 'none'
-		// 				// historyContainer.style.display = 'block'
-		// 			}
-		// 		});
-		// 	});
+		// window.onresize = () => {
+		// 	initMobileUserDataMenu();
 		// }
 
-		// function removeActive() {
-		// 	personalSidebarItems.forEach((i) => {
-		// 		i.classList.remove('item-active');
-		// 	});
-		// }
 		//personal end
+		//fun for prevent def for a link size
+		if (window.matchMedia('(min-width: 640px)').matches) {
+			document
+				.querySelectorAll('.product__buy-container')
+				.forEach((i) => {
+					i.addEventListener('click', (e) => {
+						let longSize = i.classList.contains('long-size');
+						if (!longSize) {
+							e.preventDefault();
+						}
+					});
+				});
+		}
 		//compare icon
 		let compareLink = document.querySelector('.compare__card-link');
 		if (compareLink) {
@@ -3409,11 +3626,7 @@ window.onload = function () {
 			}
 
 			function basketActualization(data) {
-				console.log(data);
-
 				if (data.magazine_id) {
-					console.log('offline');
-
 					let parentV = document.querySelector('.shop-method');
 					let stepDayV1 = parentV.querySelector('.steps-day-v1');
 					let stepDayV3 = parentV.querySelector('.steps-day-v3');
@@ -3465,8 +3678,6 @@ window.onload = function () {
 						valueAmount.value = i.quantity;
 					});
 				} else {
-					console.log('online');
-
 					let parentV = document.querySelector('.other-method');
 					let stepDayV2 = parentV.querySelector('.steps-day-v2');
 					let stepDayV3 = parentV.querySelector('.steps-day-v3');
@@ -3660,7 +3871,7 @@ window.onload = function () {
 
 			function sendData(data) {
 				$.ajax({
-					url: `index.php?route=checkout/checkout/addOrde`,
+					url: `index.php?route=checkout/checkout/addOrder`,
 					type: 'post',
 					data: data,
 					dataType: 'json',
@@ -3743,8 +3954,7 @@ window.onload = function () {
 				let target = e.target.parentNode;
 
 				if (!target.classList.contains('button-link')) {
-					//получить нужную ссылку
-					window.location.href = 'www.yourtube.com';
+					window.location.href = 'index.php?route=nuot/nuot_page';
 				}
 			});
 		}
@@ -3764,7 +3974,7 @@ window.onload = function () {
 				);
 				return matches ? decodeURIComponent(matches[1]) : undefined;
 			}
-			//document.cookie = "user=John; secure"; не забыть добавить только для https!
+
 			let products = [];
 			let attr = product.querySelector('[data-id]');
 			let mainProductId = attr.getAttribute('data-id');
@@ -3792,6 +4002,11 @@ window.onload = function () {
 				products: products,
 				user_id: authuser,
 			};
+
+			// if (window.location.protocol == 'https:') {
+			// 	document.cookie = "recently_watched; secure";
+			// }
+
 			document.cookie =
 				'recently_watched=' +
 				JSON.stringify(recentlyWatched) +
@@ -3799,7 +4014,10 @@ window.onload = function () {
 		}
 		//new block
 		let newBlock = document.querySelector('.slider-cards__swiper');
-		if (newBlock) {
+		let gridCatalodItem = document.querySelectorAll(
+			'.product__card-container-item'
+		);
+		if (newBlock || gridCatalodItem.length > 0) {
 			//change card slides
 			let prodBtn = document.querySelectorAll('div[data-prod-id]');
 			prodBtn.forEach((i) => {
@@ -3979,14 +4197,17 @@ window.onload = function () {
 			}
 		}
 		//FancyBox in card
-		let cardWrapper = document.querySelector('.card__wrapper');
-		if (cardWrapper) {
-			// const fancybox = new Fancybox([
-			// 	{
-			// 		//loop: true,
-			// 	},
-			// ]);
-			// console.log(fancybox);
-		}
+		// let cardWrapper = document.querySelector('.card__wrapper');
+		// if (cardWrapper) {
+		// 	// const fancybox = new Fancybox([
+		// 	// 	{
+		// 	// 		//loop: true,
+		// 	// 	},
+		// 	// ]);
+		// 	// console.log(fancybox);
+		// 	$('[data-fancybox="gallery"]').fancybox({
+		// 		// Options will go here
+		// 	});
+		// }
 	})();
 };
