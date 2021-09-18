@@ -6,7 +6,7 @@
 	/* // background-color: $main-navy;
 	// background: linear-gradient(var(--deg), #133b54, #215d83, #133b54);
 	// background: linear-gradient(var(--deg), #09283c, #02314e, #09283c); */
-	background: linear-gradient(100deg, #09283c, #02314e, #09283c);
+	background: linear-gradient(var(--deg), #09283c, #02314e, #09283c);
 	background-size: 600% 600%;
 	animation: AnimationName 22s cubic-bezier(0.95, 0.01, 0.25, 1) infinite;
 	position: fixed;

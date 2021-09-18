@@ -1,21 +1,21 @@
-// // let degPosition = 100;
-// // setInterval(() => {
-// // 	if (degPosition == 100) {
-// // 		degPosition = 80;
-// // 	} else if (degPosition == 80) {
-// // 		degPosition = 100;
-// // 	}
+let degPosition = 100;
+let interval = setInterval(() => {
+	if (degPosition == 100) {
+		degPosition = 80;
+	} else if (degPosition == 80) {
+		degPosition = 100;
+	}
 
-// // 	document.documentElement.style.setProperty(
-// // 		'--deg-position',
-// // 		`${degPosition}deg`
-// // 	);
-// // }, 11000);
+	document.documentElement.style.setProperty(
+		'--deg-position',
+		`${degPosition}deg`
+	);
+}, 11000);
 
-// // document.documentElement.style.setProperty(
-// // 	'--deg-position',
-// // 	`${degPosition}deg`
-// // );
+document.documentElement.style.setProperty(
+	'--deg-position',
+	`${degPosition}deg`
+);
 
 // console.log('22222');
 
@@ -67,6 +67,7 @@
 window.addEventListener('load', preloaderHide);
 
 function preloaderHide() {
+	clearInterval(interval);
 	console.log('1111');
 	setTimeout(() => {
 		let mainPreloader = document.getElementById('mainPreloader');
