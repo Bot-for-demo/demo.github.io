@@ -2,10 +2,6 @@
 	--deg: var(--deg-position);
 }
 
-body {
-	background-color: rebeccapurple !important;
-}
-
 .main-preloader {
 	/* // background-color: $main-navy;
 	// background: linear-gradient(var(--deg), #133b54, #215d83, #133b54);
@@ -29,6 +25,8 @@ body {
 
 .main-preloader.done {
 	animation: hidden-loader 0.5s linear forwards;
+	/* visibility: hidden;
+	opacity: 0; */
 }
 
 main-preloader > svg {
